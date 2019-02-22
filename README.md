@@ -11,3 +11,12 @@ entered into a comment.
 Grabs submission from a given subreddit over a fixed interval and tweets the
 set amount of posts. The tweets are recorded in a database to prevent
 tweeting duplicate posts. A delay is added to avoid spamming twitter.
+
+## WordOfTheDay
+Posts a selftext on the targeted subreddit with a word every day at a set time.
+
+## Other
+These are scripts in other repositories that I've worked with or created
+
+- [RedditImageBackup](https://github.com/LameLemon/RedditImageBackup) - Downloads images, gifs and text posts from Reddit and sorts them into folders
+
