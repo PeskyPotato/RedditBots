@@ -59,4 +59,4 @@ def grab_tweet(tweet_id):
 if __name__ == '__main__':
     # Subreddit to comment on goes below
     # An infinite loop with a time delay can be set up too
-    grabber('test') ]
+    grabber('test')
