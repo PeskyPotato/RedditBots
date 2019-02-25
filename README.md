@@ -15,6 +15,9 @@ tweeting duplicate posts. A delay is added to avoid spamming twitter.
 ## WordOfTheDay
 Posts a selftext on the targeted subreddit with a word every day at a set time.
 
+## NewUsers
+Adds new users of a subreddit to a database and prints them out. This gets usernames from submissions as well as comments and replies.
+
 ## Other
 These are scripts in other repositories that I've worked with or created
 
