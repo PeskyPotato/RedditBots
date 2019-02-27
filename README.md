@@ -2,6 +2,8 @@
 
 I have decided to make this repository for all the little Reddit bots I have written over the years instead of sharing them via gists or Pastebin. This would make it easier to maintain and keep all the scripts organised.
 
+## ImagePoster
+Posts a picture of a nut with a user defined title daily at a set time.
 
 ## Newsletter
 Collects top posts from the targeted subreddit SUB and makes a post of the top 10 and stickies it while taking out lasts weeks stickied submission.
