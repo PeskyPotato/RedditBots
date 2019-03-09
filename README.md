@@ -5,6 +5,9 @@ I have decided to make this repository for all the little Reddit bots I have wri
 ## ImagePoster
 Posts a picture of a nut with a user defined title daily at a set time.
 
+##LockedCrosspost
+If a post is not locked this bot posts to the specified subreddit.
+
 ## Newsletter
 Collects top posts from the targeted subreddit SUB and makes a post of the top 10 and stickies it while taking out lasts weeks stickied submission.
 
