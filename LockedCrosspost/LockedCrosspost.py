@@ -9,7 +9,7 @@ import sqlite3
 
 '''
 Initialise Reddit
-Enter user credentials th
+Enter user credentials
 ''' 
 reddit = praw.Reddit(client_id='',
                      client_secret='',
@@ -19,6 +19,9 @@ reddit = praw.Reddit(client_id='',
 
 # Subreddit to post to
 SUB = 'test'
+# Subs to blackslit, e.g. ['test', 'AskReddit']
+BLACKLIST = []
+# Sleep between searches
 SLEEP = 60
 
 '''
@@ -56,8 +59,8 @@ Gets posts from /r/all sorted by hot, if post is not locked, not NSFW
 and not in the table, it posts to the specified subreddit.
 '''
 def postLocked():
-    for submission in reddit.subreddit('all').hot():
-        if submission.locked and (not submission.over_18):
+    for submission in reddit.subreddit('all').hot(limit=1000):
+        if submission.locked and (not submission.over_18) and str(submission.subreddit) not in BLACKLIST:
             if(dbWrite(submission.permalink, submission.title, submission.created, submission.author)):
                 link = "https://reddit.com"+submission.permalink
                 try:
