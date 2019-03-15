@@ -70,6 +70,8 @@ def checkBuffer():
         submission = reddit.submission(id=sub_id)
         if submission.locked and (not submission.over_18) and str(submission.subreddit) not in BLACKLIST:
             postSub(submission)
+            with open("stats.csv", "a") as stats:
+                stats.write("{},{},{},{}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), submission.subreddit.display_name, submission.permalink, "1"))
             buffer.remove(str(submission.id))
 
 '''
@@ -93,13 +95,13 @@ Gets posts from /r/all sorted by hot, if post is not locked, not NSFW and not on
 then calls postSub on the submission.
 '''
 def populateBuffer():
-    print("Populatebuffer")
     if len(buffer) > BUFFER_SIZE:
         del buffer[:(len(buffer)-BUFFER_SIZE)]
-    print("Current buffer (after deletion):", len(buffer))
     for submission in reddit.subreddit('all').hot(limit=1000):
         if submission.locked and (not submission.over_18) and str(submission.subreddit) not in BLACKLIST:
             postSub(submission)
+            with open("stats.csv", "a") as stats:
+                stats.write("{},{},{},{}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), submission.subreddit.display_name, submission.permalink, "0"))
         elif str(submission.id) not in buffer:
             buffer.append(str(submission.id))
 
@@ -108,6 +110,8 @@ def populateBuffer():
 Initialise bot
 '''
 if __name__ == '__main__':
+    with open("stats.csv", "w+") as stats:
+        stats.write("date,subreddit,perma,buffer")
     while(1):
         createTable()
         populateBuffer()
