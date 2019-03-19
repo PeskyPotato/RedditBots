@@ -79,15 +79,23 @@ Posts submission to targetted subreddit if does not exist in the table
 '''
 def postSub(submission):
     link = "https://reddit.com"+submission.permalink
+    title = "{}: {}".format(str(submission.subreddit), submission.title)
+    if len(title) > 300:
+        title = title[:250] + "..."
     if(dbWrite(submission.permalink, submission.title, submission.created, submission.author)):
         try:
-            reddit.subreddit(SUB).submit(str(submission.title), url=link)
+            # reddit.subreddit(SUB).submit(str(submission.title), url=link)
+            post = submission.crosspost(SUB, "/r/"+title)
+            post.reply("Original post: [{}]({})".format(submission.title, link))
         except praw.exceptions.APIException:
             print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "You are doing too much, trying to post again in 15 minutes")
             sleep(900)
-            reddit.subreddit(SUB).submit(str(submission.title), url=link)
+            # reddit.subreddit(SUB).submit(str(submission.title), url=link)
+            post = submission.crosspost(SUB, "/r/"+title)
+            post.reply("Original post: [{}]({})".format(submission.title, link))
+
         print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "Posted",link)
-        sleep(30)
+        sleep(60)
 
 
 '''
