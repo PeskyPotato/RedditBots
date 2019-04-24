@@ -26,7 +26,6 @@ BLACKLIST = []
 SLEEP = 300
 # Max size of buffer
 BUFFER_SIZE = 5000
-
 # Buffer
 buffer = []
 
@@ -91,9 +90,13 @@ def postSub(submission):
             print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "You are doing too much, trying to post again in 15 minutes")
             sleep(900)
             # reddit.subreddit(SUB).submit(str(submission.title), url=link)
-            post = submission.crosspost(SUB, "/r/"+title)
+            try:
+                post = submission.crosspost(SUB, "/r/"+title)
+            except praw.exceptions.APIException as e:
+                with ("errors.log", "a+") as f:
+                    f.write(e)
+                    f.write(submission.permalink)
             post.reply("Original post: [{}]({})".format(submission.title, link))
-
         print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "Posted",link)
         sleep(60)
 
@@ -119,7 +122,7 @@ Initialise bot
 '''
 if __name__ == '__main__':
     with open("stats.csv", "w+") as stats:
-        stats.write("date,subreddit,perma,buffer")
+        stats.write("date,subreddit,perma,buffer\n")
     while(1):
         createTable()
         populateBuffer()
