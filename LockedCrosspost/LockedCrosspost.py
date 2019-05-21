@@ -74,6 +74,28 @@ def checkBuffer():
             buffer.remove(str(submission.id))
 
 '''
+Gets a comment tree
+'''
+def parse_comment(comment, author, comment_tree, is_root = True):
+    comment_author = ""
+    try:
+        comment_author = comment.author.name
+    except AttributeError:
+        comment_author = "None"
+
+    if is_root: 
+        comment_tree += "    Author: {} Body: {}\n\n".format(comment_author, str(comment.body).replace("\n", "    "))
+    else:
+        comment_tree += "        Author: {} Body: {}\n\n".format(comment_author, str(comment.body.replace("\n", "       ")))
+
+    for reply in comment.replies:
+        if isinstance(reply, praw.models.MoreComments):
+            continue
+        parse_comment(reply, author, comment_tree, False)
+    
+    return comment_tree
+
+'''
 Posts submission to targetted subreddit if does not exist in the table
 '''
 def postSub(submission):
@@ -83,15 +105,23 @@ def postSub(submission):
         title = title[:250] + "..."
     if(dbWrite(submission.permalink, submission.title, submission.created, submission.author)):
         try:
-            # reddit.subreddit(SUB).submit(str(submission.title), url=link)
             post = submission.crosspost(SUB, "/r/"+title)
-            post.reply("Original post: [{}]({})".format(submission.title, link))
+            comment_tree = ""
+            for comment in submission.comments:
+                if isinstance(comment, praw.models.MoreComments):
+                    continue
+                if len(comment_tree) > 8500:
+                    break
+                sleep(1)
+                print(comment.body[:10])
+                comment_tree = parse_comment(comment, submission.author, comment_tree)
+            post.reply("Original post: [{}]({})".format(submission.title, link + "\n\nComments:\n\n" + comment_tree))
         except praw.exceptions.APIException:
             print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "You are doing too much, trying to post again in 15 minutes")
             sleep(900)
-            # reddit.subreddit(SUB).submit(str(submission.title), url=link)
             try:
                 post = submission.crosspost(SUB, "/r/"+title)
+                # avoids comment in case of any error
             except praw.exceptions.APIException as e:
                 with ("errors.log", "a+") as f:
                     f.write(e)
