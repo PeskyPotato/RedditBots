@@ -2,6 +2,9 @@
 
 I have decided to make this repository for all the little Reddit bots I have written over the years instead of sharing them via gists or Pastebin. This would make it easier to maintain and keep all the scripts organised.
 
+## FlairCrossposter
+Crossposts a submission with a specific flair to a targeted subreddit. The post is saved in a database and checked to make sure the submission is not already crossposted by the bot.
+
 ## ImagePoster
 Posts a picture of a nut with a user defined title daily at a set time.
 
