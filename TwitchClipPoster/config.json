@@ -1,0 +1,15 @@
+{
+    "reddit_client_id":"",
+    "reddit_client_secret":"",
+    "reddit_username":"",
+    "reddit_password":"",
+    "twitch_client_id":"",
+
+    "time":"13:10",
+    "subreddit":"test",
+    "twitch_user":"spekel", 
+    
+    "twitch_period":"week",
+    "twitch_trending":"true",
+    "twitch_limit":"50"
+}
