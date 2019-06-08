@@ -1,0 +1,31 @@
+{
+    ".meta": {
+        "currency": "EUR"
+    },
+    "data": {
+        "list": [
+            {
+                "plain": "courierofcrypts",
+                "title": "Courier of the Crypts",
+                "price_new": 16.79,
+                "price_old": 16.79,
+                "price_cut": 0,
+                "added": 1558977205,
+                "shop": {
+                    "id": "steam",
+                    "name": "Steam"
+                },
+                "drm": [
+                    "steam"
+                ],
+                "urls": {
+                    "buy": "https://store.steampowered.com/app/362940/",
+                    "game": "https://isthereanydeal.com/game/courierofcrypts/info/"
+                }
+            }
+        ],
+        "urls": {
+            "deals": "https://isthereanydeal.com/"
+        }
+    }
+}

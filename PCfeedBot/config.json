@@ -1,0 +1,19 @@
+{
+    "reddit_client_id":"",
+    "reddit_client_secret":"",
+    "reddit_username":"",
+    "reddit_password":"",
+
+    "igdb_user_key":"",
+
+    "isad_key":"",
+
+    "subreddit":"PCfeed",
+
+    "words_to_remove": [
+        "(pre-release)",
+        "(DLC)",
+        "DLC",
+        "(update)"
+    ]
+}

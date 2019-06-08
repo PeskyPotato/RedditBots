@@ -1,0 +1,182 @@
+{
+    "products": [
+        {
+            "customAttributes": [],
+            "developer": "Positech Games",
+            "publisher": "Positech Games",
+            "gallery": [
+                "//images-1.gog.com/ec7e546a62378d6d3e3f4e901336fcc152df4510fa991bfa3fe57141cb580f67",
+                "//images-1.gog.com/6f39331be181b15990432fbe5984cabdf5769d37204141d79fda8545a094c5f1",
+                "//images-2.gog.com/1b1407f41863e181fc2b278ed800ac064d615f9975282f9516e1f6a945d91aff",
+                "//images-4.gog.com/7346d9333eaefdd315260340ea6ffa8027a4d8e1b95fadd953ec9c15c89ec867",
+                "//images-4.gog.com/4892d6d98446ebc5b00a0b14009cd8724354eab78041f91e1db70a8f71045a84",
+                "//images-1.gog.com/711ce2616f74b03cc1c573036daef337b33a81414bb73d559377ad2f9d6dd68a",
+                "//images-2.gog.com/df82a5f7a98210674418ad4604c2af307c23711922417c3fcb1c99e34f32f503",
+                "//images-2.gog.com/128dd7a6983df6209596e6e6b18805e5c000f0766fe7139a07d0016c0e1672e1"
+            ],
+            "video": {
+                "id": "6UNTAEHL7Ts",
+                "provider": "youtube"
+            },
+            "supportedOperatingSystems": [
+                "windows"
+            ],
+            "genres": [
+                "Simulation",
+                "Strategy",
+                "Managerial"
+            ],
+            "globalReleaseDate": 1495054800,
+            "isTBA": false,
+            "price": {
+                "amount": "17.49",
+                "baseAmount": "24.99",
+                "finalAmount": "17.49",
+                "isDiscounted": true,
+                "discountPercentage": 30,
+                "discountDifference": "7.50",
+                "symbol": "$",
+                "isFree": false,
+                "discount": 30,
+                "isBonusStoreCreditIncluded": false,
+                "bonusStoreCreditAmount": "0.00",
+                "promoId": "the_summer_sale_2019_deal"
+            },
+            "isDiscounted": true,
+            "isInDevelopment": false,
+            "id": 1240786865,
+            "releaseDate": 1495054800,
+            "availability": {
+                "isAvailable": true,
+                "isAvailableInAccount": true
+            },
+            "salesVisibility": {
+                "isActive": true,
+                "fromObject": {
+                    "date": "2017-05-18 18:55:00.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe/Nicosia"
+                },
+                "from": 1495122900,
+                "toObject": {
+                    "date": "2020-12-31 23:59:59.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe/Nicosia"
+                },
+                "to": 1609451999
+            },
+            "buyable": true,
+            "title": "Production Line",
+            "image": "//images-1.gog.com/20debe9a87151e4e55831b83e46196b5d66cc734c383ab4a98a7d259ddc586a5",
+            "url": "/game/production_line",
+            "supportUrl": "/support/production_line",
+            "forumUrl": "/forum/production_line",
+            "worksOn": {
+                "Windows": true,
+                "Mac": false,
+                "Linux": false
+            },
+            "category": "Simulation",
+            "originalCategory": "Simulation",
+            "rating": 34,
+            "type": 1,
+            "isComingSoon": false,
+            "isPriceVisible": true,
+            "isMovie": false,
+            "isGame": true,
+            "slug": "production_line",
+            "isWishlistable": true
+        },
+        {
+            "customAttributes": [],
+            "developer": "Positech Games",
+            "publisher": "Positech Games",
+            "gallery": [
+                "//images-2.gog.com/2505f73fc360fe199c121469e4fa63f4cb2a7016981bd1ac2b0f5f3478bcade8",
+                "//images-2.gog.com/b075cd350587cba866206f18a96de6400a424d5dfc047a4a56bb8f35969a8039",
+                "//images-3.gog.com/46dab5a4d1fc2a605e9054cfa150fe189006648dcbc4ec44b8163d0497a044fa",
+                "//images-3.gog.com/ea5bd8128c529e16681866baf0ad7ea054d5abdb769b36189df99d23767b88b0",
+                "//images-3.gog.com/95c781a9111a3828db6b44d8e6749430028e097cac52cc020af7f9f94746d88f",
+                "//images-3.gog.com/23c0d8a400612b3a26f49dbadff9e5013e66e9a5c5949a00008fbf2b79688d63"
+            ],
+            "video": {
+                "id": "dIyAovow4tA",
+                "provider": "youtube"
+            },
+            "supportedOperatingSystems": [
+                "windows"
+            ],
+            "genres": [
+                "Simulation",
+                "Strategy",
+                "Managerial"
+            ],
+            "globalReleaseDate": 1556658000,
+            "isTBA": false,
+            "price": {
+                "amount": "4.99",
+                "baseAmount": "4.99",
+                "finalAmount": "4.99",
+                "isDiscounted": false,
+                "discountPercentage": 0,
+                "discountDifference": "0.00",
+                "symbol": "$",
+                "isFree": false,
+                "discount": 0,
+                "isBonusStoreCreditIncluded": false,
+                "bonusStoreCreditAmount": "0.00",
+                "promoId": null
+            },
+            "isDiscounted": false,
+            "isInDevelopment": false,
+            "id": 2041968421,
+            "releaseDate": 1556658000,
+            "availability": {
+                "isAvailable": true,
+                "isAvailableInAccount": true
+            },
+            "salesVisibility": {
+                "isActive": true,
+                "fromObject": {
+                    "date": "2019-05-01 18:45:00.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe/Nicosia"
+                },
+                "from": 1556725500,
+                "toObject": {
+                    "date": "2020-12-31 23:59:59.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe/Nicosia"
+                },
+                "to": 1609451999
+            },
+            "buyable": true,
+            "title": "Doors that go like this",
+            "image": "//images-1.gog.com/adba760077ab190263b8f529e66b35ab5b71eb072edaa357ddc13917ba69ce04",
+            "url": "/game/doors_that_go_like_this",
+            "supportUrl": "/support/doors_that_go_like_this",
+            "forumUrl": "/forum/production_line",
+            "worksOn": {
+                "Windows": true,
+                "Mac": false,
+                "Linux": false
+            },
+            "category": "Simulation",
+            "originalCategory": "Simulation",
+            "rating": 20,
+            "type": 3,
+            "isComingSoon": false,
+            "isPriceVisible": true,
+            "isMovie": false,
+            "isGame": true,
+            "slug": "doors_that_go_like_this",
+            "isWishlistable": true
+        }
+    ],
+    "ts": null,
+    "page": 1,
+    "totalPages": 1,
+    "totalResults": "2",
+    "totalGamesFound": 2,
+    "totalMoviesFound": 0
+}
