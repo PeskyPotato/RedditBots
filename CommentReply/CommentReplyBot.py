@@ -1,6 +1,5 @@
 '''
-Replies to comments based on keywords with predefined
-responses. 
+Replies to comments based on keywords with predefined responses. 
 '''
 
 import praw
@@ -23,20 +22,21 @@ SUBMISSION_LIMIT = 20
 with open('responses.txt') as f:
     RESPONSES = list(f)
 
-'''
-Creates a database file and table if one does not already exist.
-'''
+def date_print(message):
+    '''Prints messages with date'''
+    print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message)
+
 def createTable():
+'''Creates a database file and table if one does not already exist.'''
+
     conn = sqlite3.connect('posted.db')
     c = conn.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS posts (perma TEXT NOT NULL UNIQUE, author TEXT, PRIMARY KEY (perma))')
     c.close()
     conn.close()
 
-'''
-Writes comments to table, if the comment exists returns a 0 if succesfully returns a 1.
-'''
 def dbWrite(perma, author):
+'''Writes comments to table, if the comment exists returns a 0 else returns a 1.'''
     try:
         conn = sqlite3.connect('posted.db')
         c = conn.cursor()
@@ -52,9 +52,11 @@ def dbWrite(perma, author):
     return 1
 
 def getResponse():
+'''Gets random responses'''
     return random.choice(RESPONSES)
 
 def checkSubmissions():
+'''Checks for submissions and then replies'''
     for submission in reddit.subreddit(SUBREDDIT).hot(limit=SUBMISSION_LIMIT):
         submission.comments.replace_more(limit=None)
         for comment in submission.comments.list():
@@ -63,14 +65,14 @@ def checkSubmissions():
                     response = getResponse()
                     if response and dbWrite(comment.id, comment.author):
                         comment.reply(response)
-                        print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "replied to", comment.id, "with", response.strip())                    
-        
+                        date_print("Replied to {} with {}".format(comment.id, response.strip()))
+
 
 def main():
+    createTable()
     while(1):
-        createTable()
         checkSubmissions()
-        print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "sleeping for", SLEEP_TIME, "seconds")
+        date_print("Sleeping for {} seconds".format(SLEEP_TIME))
         sleep(SLEEP_TIME)
 
 main()
