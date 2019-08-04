@@ -17,6 +17,9 @@ Collects top posts from the targeted subreddit SUB and makes a post of the top 1
 ## NewUsers
 Adds new users of a subreddit to a database and prints them out. This gets usernames from submissions as well as comments and replies.
 
+## PMPoster
+Send a daily private message to a specified redditor based on a set time and a list of messages
+
 ## TwitterPost
 Checks submissions on a given subreddit over a fixed interval, if
 the submission url is a tweet, the tweet text and images are
