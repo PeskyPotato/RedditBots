@@ -20,6 +20,9 @@ Adds new users of a subreddit to a database and prints them out. This gets usern
 ## PMPoster
 Send a daily private message to a specified redditor based on a set time and a list of messages
 
+## TwitchLivePost
+Replies to comments based on keywords with predfined responses
+
 ## TwitterPost
 Checks submissions on a given subreddit over a fixed interval, if
 the submission url is a tweet, the tweet text and images are
@@ -37,4 +40,3 @@ Posts a selftext on the targeted subreddit with a word every day at a set time.
 These are scripts in other repositories that I've worked with or created
 
 - [RedditImageBackup](https://github.com/LameLemon/RedditImageBackup) - Downloads images, gifs and text posts from Reddit and sorts them into folders
-
