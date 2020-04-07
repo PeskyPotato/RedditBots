@@ -20,6 +20,9 @@ Adds new users of a subreddit to a database and prints them out. This gets usern
 ## PMPoster
 Send a daily private message to a specified redditor based on a set time and a list of messages
 
+## RedditNotifier
+Sends a message to a discord channel through a webhook when a new message is posted to a subreddit.
+
 ## TwitchLivePost
 Replies to comments based on keywords with predfined responses
 
